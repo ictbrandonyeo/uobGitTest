@@ -40,3 +40,15 @@ jobs:
     - name: Testing with Pytest
       run: | 
         pytest
+
+   # this is where we access the hidden repo 
+    - name: Checkout Hidden Repo 
+      uses: actions/checkout@v4
+      with: 
+         repository: ictbrandonyeo/UOBHidden
+         token: $(( secrets.SECRETUOB))
+
+   # this print out the hidden files
+    - name: print out hidden things
+      run: | 
+         ls
