@@ -46,9 +46,12 @@ jobs:
       uses: actions/checkout@v4
       with: 
          repository: ictbrandonyeo/UOBHidden
+         path: hiddenfolder
          token: $(( secrets.SECRETUOB))
 
    # this print out the hidden files
     - name: print out hidden things
       run: | 
+         ls
+         cd hiddenfolder
          ls
