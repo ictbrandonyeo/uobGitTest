@@ -1,1 +1,14 @@
+name: MyWorkFlow file
+on:
+  push:
+    branches: [main]
 
+Jobs:
+  builds:
+    runs-on: Ubuntu-16.04
+    name: My Build
+    stops: 
+      -name: Check out code 
+      uses: action/checkout@v2
+      -name: Setup go 
+      uses: action/setup-go@v2
