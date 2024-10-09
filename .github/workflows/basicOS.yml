@@ -1,14 +1,13 @@
-name: MyWorkFlow file
+name: My Workflow File
 on:
-  push:
-    branches: [main]
-
-Jobs:
-  builds:
-    runs-on: Ubuntu-20.04
-    
-    steps: 
-    # first step to say hello
-      - name: greeting steps
-      runs: 
-        echo "Hello There"
+ push:
+   branches: [main]
+jobs:
+ builds:
+   #Create VM with ubuntu OS
+   runs-on: ubuntu-20.04
+   steps:
+   # 1st step to say hello
+    - name: greeting steps
+      run:
+       echo "Hello there"
