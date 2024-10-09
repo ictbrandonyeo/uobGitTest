@@ -8,6 +8,7 @@ Jobs:
     runs-on: Ubuntu-16.04
     
     steps: 
+    # first step to say hello
       - name: greeting steps
       runs: 
         echo "Hello There"
