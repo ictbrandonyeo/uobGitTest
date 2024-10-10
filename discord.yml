@@ -1,21 +1,18 @@
-name: Send Discord Message
+name: Discord Message on Push
 
 on:
   push:
-    branches: [main]
+    branches:
+      - main  # This triggers the action when you push to the main branch
 
 jobs:
-  send_message:
+  discord-message:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
       - name: Send Discord Message
-        uses: actions/setup-node@v3
+        uses: discord-actions/message@v2
         with:
-          node-version: '16'
-      - name: Install Discord Actions
-        run: npm install discord-actions
-      - name: Send Message
-        run: |
-          node index.js
-          
+          # Discord webhook URL from GitHub Secrets
+          webhookUrl: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          # The message you want to send to Discord
+          message: "Hello this is ${{ github.actor }}: ${{ github.event.head_commit.message }}"
