@@ -1,0 +1,38 @@
+name: Build and Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main  # This workflow runs whenever there is a push to the main branch
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+    # Step 1: Check out the repository
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    # Step 2: Set up Node.js environment (optional if no dependencies are required)
+    # Skip this step if your project doesn't have Node.js dependencies (e.g., package.json)
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '16'
+
+    # Step 3: Run tests (optional if there are no tests)
+    # - name: Run tests
+    #   run: npm test
+
+    # Step 4: Build the webpage (optional if there is a build step, e.g., for static site generators)
+    # If you are using static site generators like Jekyll, Hugo, or Gatsby, you would add build steps here.
+    # For a simple HTML page, this step is not required.
+
+    # Step 5: Deploy to GitHub Pages using the peaceiris/actions-gh-pages action
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.SECRETUOB }}
+        publish_dir: ./  # This points to the root directory where your HTML file resides
+        cname: ''  # Optional: Add custom domain if needed
