@@ -1,0 +1,14 @@
+            - name: Discord Message
+  # You may pin to the exact commit or the version.
+  # uses: discord-actions/message@5c7149c81a83146e5d01f142be1bf87a61831c4d
+  uses: discord-actions/message@v2
+  with:
+    # A Discord webhook URL
+    webhookUrl: 
+    # A message to send to Discord
+    message: 
+    # A username for the message
+    username: # optional
+    # An avatar for the message
+    avatar: # optional
+          
