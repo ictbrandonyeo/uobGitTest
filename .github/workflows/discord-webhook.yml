@@ -16,3 +16,5 @@ jobs:
           webhookUrl: ${{ secrets.DISCORD_WEBHOOK_URL }}
           # The message you want to send to Discord
           message: "Hello: ${{ github.event.head_commit.message }}"
+
+          
