@@ -1,14 +1,21 @@
-            - name: Discord Message
-  # You may pin to the exact commit or the version.
-  # uses: discord-actions/message@5c7149c81a83146e5d01f142be1bf87a61831c4d
-  uses: discord-actions/message@v2
-  with:
-    # A Discord webhook URL
-    webhookUrl: https://discordapp.com/api/webhooks/1293767681069289502/4eVwiW1wmTOxcqjbv0qPn9rw5lQpfuiLIwrZ13JOW43nayW9FdCxZX6LCRhWFFIH3iyH
-    # A message to send to Discord
-    message: "Turritopsis Teo En Ming Time Traveller"
-    # A username for the message
-    username: # optional
-    # An avatar for the message
-    avatar: # optional
+name: Send Discord Message
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  send_message:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Send Discord Message
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+      - name: Install Discord Actions
+        run: npm install discord-actions
+      - name: Send Message
+        run: |
+          node index.js
           
