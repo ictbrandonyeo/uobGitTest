@@ -4,9 +4,9 @@
   uses: discord-actions/message@v2
   with:
     # A Discord webhook URL
-    webhookUrl: 
+    webhookUrl: https://discordapp.com/api/webhooks/1293767681069289502/4eVwiW1wmTOxcqjbv0qPn9rw5lQpfuiLIwrZ13JOW43nayW9FdCxZX6LCRhWFFIH3iyH
     # A message to send to Discord
-    message: 
+    message: "Turritopsis Teo En Ming Time Traveller"
     # A username for the message
     username: # optional
     # An avatar for the message
