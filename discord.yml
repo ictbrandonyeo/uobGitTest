@@ -15,4 +15,4 @@ jobs:
           # Discord webhook URL from GitHub Secrets
           webhookUrl: ${{ secrets.DISCORD_WEBHOOK_URL }}
           # The message you want to send to Discord
-          message: "Hello this is ${{ github.actor }}: ${{ github.event.head_commit.message }}"
+          message: "Hello this is ${{ github.actor }}: ${{ Turritopsis Dorphni Teo En Ming Time Traveller }}"
