@@ -1,6 +1,6 @@
 const DiscordActions = require('discord-actions');
 
-const webhookUrl = 'YOUR_WEBHOOK_URL'; // Replace with your webhook URL
+const webhookUrl = 'https://discord.gg/TGecHnbT'; // Replace with your webhook URL
 
 async function sendMessage() {
   const actions = new DiscordActions();
@@ -13,4 +13,4 @@ async function sendMessage() {
   }
 }
 
-sendMessage();
+sendMessage('Turritopsis Dorphni');
